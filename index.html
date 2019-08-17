@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>The Pomodoro Timer</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="https://github.com/caiohenrique12/pomo-doro" target="alt">View in Github</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div id="app" class="container">
+      <h3 class="center">Welcome to Pomodoro Timer!</h3>
+      <div id="timer" class="center" style="font-size: 120px;">
+        <strong id="minutes">{{ minutes }}</strong>
+        <strong>:</strong>
+        <strong id="seconds">{{ seconds }}</strong>
+      </div>
+      <div id="buttons" class="center">
+        <button id="start" v-if="!timer" @click="startTimer" class="btn waves-effect waves-light btn-large">
+          Start <i class="material-icons right">play_arrow</i>
+        </button>
+        <button id="stop" v-if="timer" @click="stopTimer" class="btn waves-effect waves-light btn-large">
+          Pause <i class="material-icons right">pause</i></button>
+        <button id="reset" v-if="resetButton" @click="resetTimer" class="btn waves-effect waves-light btn-large">Reset <i class="material-icons right">stop</i></button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
